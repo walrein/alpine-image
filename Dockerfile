@@ -2,7 +2,17 @@
 FROM alpine
 
 #apk
-RUN apk add --update --no-cache vim git
+RUN apk add --update --no-cache vim git zsh tmux
 
-#ENTRYPOINT
-ENTRYPOINT ["vim"]
+#user
+RUN echo 'root:root' |chpasswd
+RUN useradd -m walrein \
+	&& echo "walrein ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+	&& echo 'walrein:walrein' | chpasswd
+RUN chsh -s /usr/bin/zsh walrein
+
+USER walrein
+WORKDIR /home/walrein
+ENV HOME /home/walrein
+
+#CMD ["/usr/bin/zsh"]
