@@ -6,7 +6,7 @@ RUN apk add --update --no-cache vim git zsh tmux
 
 #user
 RUN echo 'root:root' |chpasswd
-RUN /usr/sbin/useradd -m walrein \
+RUN adduser -m walrein \
 	&& echo "walrein ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
 	&& echo 'walrein:walrein' | chpasswd
 RUN chsh -s /usr/bin/zsh walrein
