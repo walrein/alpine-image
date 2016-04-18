@@ -1,8 +1,8 @@
 #alpine-image
 FROM alpine
 
-#vim
-RUN apk add --update vim git
+#apk
+RUN apk add --update --no-cache vim git
 
 #ENTRYPOINT
 ENTRYPOINT ["vim"]
