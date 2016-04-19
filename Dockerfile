@@ -2,7 +2,7 @@
 FROM alpine
 
 #apk
-RUN apk add --update --no-cache vim git zsh tmux
+#RUN apk add --update --no-cache vim git zsh tmux
 
 #user
 RUN echo 'root:root' |chpasswd
