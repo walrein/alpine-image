@@ -6,7 +6,7 @@ FROM alpine
 
 #user
 RUN echo 'root:root' |chpasswd
-RUN adduser -m walrein \
+RUN adduser -S walrein \
 	&& echo "walrein ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
 	&& echo 'walrein:walrein' | chpasswd
 RUN chsh -s /usr/bin/zsh walrein
