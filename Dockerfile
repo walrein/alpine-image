@@ -1,7 +1,7 @@
 #alpine-image
 FROM gliderlabs/alpine
 
-RUN apk add --update --no-cache zsh vim ssh tmux
+RUN apk add --update --no-cache zsh vim tmux
 
 
 #user
