@@ -1,15 +1,7 @@
 #alpine-image
-FROM alpine
+FROM gliderlabs/alpine
 
-ENV ver 3.3
-RUN echo $ver
-RUN echo "http://dl-1.alpinelinux.org/alpine/v$ver/main" >> /etc/apk/repositories;
-#http://dl-2.alpinelinux.org/alpine/v3.3/main
-#http://dl-3.alpinelinux.org/alpine/v3.3/main
-#http://dl-4.alpinelinux.org/alpine/v3.3/main
-#http://dl-5.alpinelinux.org/alpine/v3.3/main
-
-RUN apk add --update --no-cache zsh
+RUN apk add --update --no-cache zsh vim ssh tmux
 
 
 #user
