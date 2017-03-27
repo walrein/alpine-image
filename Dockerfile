@@ -2,6 +2,7 @@
 FROM gliderlabs/alpine
 
 RUN apk add --update --no-cache zsh vim tmux
+RUN apk add --update --no-cache ssh
 
 
 #user
